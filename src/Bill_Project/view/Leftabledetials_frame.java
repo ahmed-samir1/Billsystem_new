@@ -1,11 +1,9 @@
-package Bill_Project.Actions;
-
-import Bill_Project.Appcontrol.Billsystemframe;
+package Bill_Project.view;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Ltabledetials extends JDialog {
+public class Leftabledetials_frame extends JDialog {
     private JLabel customerNameLbl;
     private JTextField customerName;
     private JLabel invoDateLbl;
@@ -13,7 +11,7 @@ public class Ltabledetials extends JDialog {
     private JButton okBtn;
     private JButton cancelBtn;
 
-    public Ltabledetials(Billsystemframe frame) {
+    public Leftabledetials_frame(Billsystemframe frame) {
 
         customerNameLbl = new JLabel("Customer Name : ");
         customerName = new JTextField(20);

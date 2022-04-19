@@ -1,11 +1,9 @@
-package Bill_Project.Actions;
-
-import Bill_Project.Appcontrol.Billsystemframe;
+package Bill_Project.view;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Rtabledetials extends JDialog {
+public class Right_tabledetials_frame extends JDialog {
     private JLabel itemNameLbl;
     private JTextField itemName;
     private JLabel itemCountLbl;
@@ -15,7 +13,7 @@ public class Rtabledetials extends JDialog {
     private JButton okBtn;
     private JButton cancelBtn;
 
-    public Rtabledetials(Billsystemframe frame) {
+    public Right_tabledetials_frame(Billsystemframe frame) {
 
         itemNameLbl = new JLabel("Item Name : ");
         itemName = new JTextField(20);

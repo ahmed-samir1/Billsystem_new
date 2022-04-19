@@ -1,4 +1,4 @@
-package Bill_Project.Input;
+package Bill_Project.model;
 
 import java.util.ArrayList;
 import java.util.Date;

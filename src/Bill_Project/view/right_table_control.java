@@ -1,15 +1,15 @@
-package Bill_Project.Maintable;
+package Bill_Project.view;
 
-import Bill_Project.Input.BillLine;
+import Bill_Project.model.BillLine;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class Rtableinput extends DefaultTableModel {
+public class right_table_control extends DefaultTableModel {
     private String[] cols = {"No.", "Item Name", "Item Price", "Count", "Item Total"};
     private ArrayList<BillLine> data;
 
-    public Rtableinput(ArrayList<BillLine> data) {
+    public right_table_control(ArrayList<BillLine> data) {
         this.data = data;
     }
 

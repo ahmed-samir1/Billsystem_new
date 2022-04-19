@@ -1,4 +1,4 @@
-package Bill_Project.Appcontrol;
+package Bill_Project.view;
 
 public class Main {
 

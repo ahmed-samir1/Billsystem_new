@@ -1,12 +1,8 @@
-package Bill_Project.Appcontrol;
+package Bill_Project.view;
 
-import Bill_Project.Actions.DataModel;
-import Bill_Project.Actions.Ltabledetials;
-import Bill_Project.Actions.Rtabledetials;
-import Bill_Project.Input.BillHeader;
-import Bill_Project.Input.BillLine;
-import Bill_Project.Maintable.Ltableinput;
-import Bill_Project.Maintable.Rtableinput;
+import Bill_Project.model.DataModel;
+import Bill_Project.model.BillHeader;
+import Bill_Project.model.BillLine;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -49,11 +45,11 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
     private JButton delete;
     private ArrayList<BillHeader> Invoices = new ArrayList<>();
     private ArrayList<BillLine> lines = new ArrayList<>();
-    private Ltableinput headerModel;
-    private Rtableinput lineModel;
+    private left_table_control headerModel;
+    private right_table_control lineModel;
     private SimpleDateFormat dd = new SimpleDateFormat("dd-mm-yyyy");
-    private Ltabledetials headerDialogue;
-    private Rtabledetials lineDialogue;
+    private Leftabledetials_frame headerDialogue;
+    private Right_tabledetials_frame lineDialogue;
 
     public Billsystemframe(String title) {
 
@@ -214,7 +210,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
         data1.add(rrow2);
         data1.add(rrow3);
 
-        DataModel TRight = new DataModel(new String[]{"No.", "Item Name", "Item Price", "Count", "Item Total"}, data1);
+        DataModel TRight = new DataModel(new String[]{"No.", "Item Name", "Item Price", "Count", "Ite1m Total"}, data1);
         rightTable = new JTable(TRight);
         r.add(new JScrollPane(rightTable));
         rr.add(r, BorderLayout.CENTER);
@@ -377,7 +373,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
 
             buffer.close();
             fr.close();
-            headerModel = new Ltableinput(Invoices);
+            headerModel = new left_table_control(Invoices);
             leftTable.setModel(headerModel);
             leftTable.validate();
 
@@ -432,7 +428,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
     }
 
     private void createInvoice() {
-        headerDialogue = new Ltabledetials(this);
+        headerDialogue = new Leftabledetials_frame(this);
         headerDialogue.setLocationRelativeTo(null);
         headerDialogue.setTitle("Create New Invoice");
         headerDialogue.setVisible(true);
@@ -446,7 +442,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
     }
 
     private void createItem() {
-        lineDialogue = new Rtabledetials(this);
+        lineDialogue = new Right_tabledetials_frame(this);
         lineDialogue.setLocationRelativeTo(null);
         lineDialogue.setTitle("Create New Invoice Item");
         lineDialogue.setVisible(true);
@@ -461,7 +457,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
     }
 
 
-    private BillHeader findByNumber(int no) {
+    public BillHeader findByNumber(int no) {
         for (BillHeader header : Invoices) {
             if (header.getNum() == no) {
                 return header;
@@ -480,7 +476,7 @@ public class Billsystemframe extends JFrame implements ActionListener, ListSelec
             invoiceD.setText(row.getDate().toString());
             invTot.setText("" + row.getTotal());
             lines = row.getLines();
-            lineModel = new Rtableinput(lines);
+            lineModel = new right_table_control(lines);
             rightTable.setModel(lineModel);
             lineModel.fireTableDataChanged();
         }

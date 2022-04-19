@@ -1,6 +1,4 @@
-package Bill_Project.Input;
-
-import Bill_Project.Input.BillHeader;
+package Bill_Project.model;
 
 public class BillLine {
 

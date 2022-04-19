@@ -1,16 +1,16 @@
-package Bill_Project.Maintable;
+package Bill_Project.view;
 
-import Bill_Project.Input.BillHeader;
+import Bill_Project.model.BillHeader;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class Ltableinput extends DefaultTableModel {
+public class left_table_control extends DefaultTableModel {
 
     private String[] cols = {"No.", "Date", "Customer", "Total"};
     private ArrayList<BillHeader> invoices;
 
-    public Ltableinput(ArrayList<BillHeader> invoices) {
+    public left_table_control(ArrayList<BillHeader> invoices) {
         this.invoices = invoices;
     }
 

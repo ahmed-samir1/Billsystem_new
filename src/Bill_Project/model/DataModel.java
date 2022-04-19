@@ -1,4 +1,4 @@
-package Bill_Project.Actions;
+package Bill_Project.model;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
